@@ -1,14 +1,42 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="openFirst()" fill="clear"><ion-icon name="menu"></ion-icon></ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-title>
+            Impetus
+          </ion-title>
+        </ion-col>
+        <ion-col>
+          <!-- Image -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
+<ion-menu side="start" menuId="first">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-menu>
+
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <h1>"Live Every Day Like It Might Be Your Last."</h1>
+  <!-- <h2>"Live Every Day Like It Might Be Your Last."</h2> -->
 </ion-content>
