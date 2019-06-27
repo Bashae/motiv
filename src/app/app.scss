@@ -4,3 +4,87 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+
+@import url('https://fonts.googleapis.com/css?family=Faster+One|Lato:300i|Oswald:600|Quicksand:300|Ubuntu:500i&display=swap');
+
+
+ion-icon {
+    color: cadetblue !important;
+}
+
+ion-menu {
+    ion-toolbar {
+        --background: cadetblue;
+        --color: white;
+    }
+}
+
+ion-item {
+    font-family: "Oswald";
+    color: cadetblue;
+    font-style: italic;
+}
+
+.align--left {
+    text-align: left;
+}
+.align--center {
+    text-align: center;
+}
+.align--right {
+    text-align: right;
+}
+
+.button--sign-out {
+    --color: cadetblue;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.button--sign-in, .button--registration {
+    --border-color: white;
+    --color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+}
+
+.icon--menu-item {
+    font-size: 26px;
+}
+
+.icon--add-item {
+    font-size: 24px;
+}
+
+.title {
+    font-family: "Faster One";
+    color: cadetblue;
+}
+
+.title--app {
+    font-size: 50px;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+
+.title--app-secondary {
+    font-size: 20px;
+    font-family: "Oswald";
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: white;
+    text-align: center;
+}
+
+.title--header {
+    font-size: 26px;
+    margin-top: 5px;
+}
+
+.title--menu {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}

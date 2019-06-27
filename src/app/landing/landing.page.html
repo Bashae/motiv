@@ -1,0 +1,16 @@
+<ion-content class="page--landing">
+  <h1 class="title title--app">Impetus</h1>
+  <h2 class="title title--app-secondary">Daily Motivation</h2>
+    <ion-item>
+      <ion-label position="floating">Email Address</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+  
+    <ion-button class="button--sign-in" fill="outline" expand="block" (click)="login()">Login</ion-button>
+    <ion-button class="button--registration" fill="outline" expand="block" href="/registration">Register</ion-button>
+</ion-content>
