@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, MenuController } from '@ionic/angular';
+// import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,15 @@ import { ActionSheetController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(public menu: MenuController, public actionSheetController: ActionSheetController) { }
+  constructor(
+    public menu: MenuController,
+    public actionSheetController: ActionSheetController,
+    // public auth: AuthService
+  ) { }
+
+  logOutUser() {
+    // this.auth.logOut();
+  }
 
   openFirst() {
     this.menu.enable(true, 'first');
