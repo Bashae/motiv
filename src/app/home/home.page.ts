@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActionSheetController, MenuController } from '@ionic/angular';
-// import { AuthService } from './../auth.service';
+import { AuthService } from './../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +12,11 @@ export class HomePage {
   constructor(
     public menu: MenuController,
     public actionSheetController: ActionSheetController,
-    // public auth: AuthService
+    public authService: AuthService
   ) { }
 
   logOutUser() {
-    // this.auth.logOut();
+    this.authService.logOut();
   }
 
   openFirst() {
@@ -40,25 +40,25 @@ export class HomePage {
         text: 'Stream',
         icon: 'list',
         handler: () => {
-          console.log('Share clicked');
+          console.log('Stream clicked');
         }
       }, {
         text: 'Story',
         icon: 'book',
         handler: () => {
-          console.log('Play clicked');
+          console.log('Story clicked');
         }
       }, {
         text: 'Quote',
         icon: 'quote',
         handler: () => {
-          console.log('Favorite clicked');
+          console.log('Quote clicked');
         }
       }, {
         text: 'Video',
         icon: 'play-circle',
         handler: () => {
-          console.log('Cancel clicked');
+          console.log('Video clicked');
         }
       }, {
         text: 'Support',

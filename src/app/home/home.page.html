@@ -26,11 +26,11 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item href="https://www.ionicframework.com">Stream <ion-icon name="list" slot="end"></ion-icon></ion-item>
-      <ion-item href="https://www.ionicframework.com">Stories <ion-icon name="book" slot="end"></ion-icon></ion-item>
-      <ion-item href="https://www.ionicframework.com">Quotes <ion-icon name="quote" slot="end"></ion-icon></ion-item>
-      <ion-item href="https://www.ionicframework.com">Videos <ion-icon name="play-circle" slot="end"></ion-icon></ion-item>
-      <ion-item href="https://www.ionicframework.com">Support <ion-icon name="flame" slot="end"></ion-icon></ion-item>
+      <ion-item href="https://www.ionicframework.com">Stream  <ion-icon name="list" slot="end" (click)="loadStream('stream')"></ion-icon></ion-item>
+      <ion-item href="https://www.ionicframework.com">Stories <ion-icon name="book" slot="end" (click)="loadStream('stories')"></ion-icon></ion-item>
+      <ion-item href="https://www.ionicframework.com">Quotes  <ion-icon name="quote" slot="end" (click)="loadStream('quotes')"></ion-icon></ion-item>
+      <ion-item href="https://www.ionicframework.com">Videos  <ion-icon name="play-circle" slot="end" (click)="loadStream('videos')"></ion-icon></ion-item>
+      <ion-item href="https://www.ionicframework.com">Support <ion-icon name="flame" slot="end" (click)="loadStream('support')"></ion-icon></ion-item>
     </ion-list>
     <ion-button class="button--sign-out" fill="outline" color="cadetblue" expand="block" (click)="logOutUser()">Sign Out</ion-button>
   </ion-content>
