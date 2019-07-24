@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ActionSheetController, MenuController } from '@ionic/angular';
+import { ActionSheetController, MenuController, ModalController } from '@ionic/angular';
 import { AuthService } from './../auth.service';
+import { AddPostPage } from '../add-post/add-post.page';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomePage {
 
   constructor(
     public menu: MenuController,
+    public modalController: ModalController,
     public actionSheetController: ActionSheetController,
     public authService: AuthService
   ) { }
@@ -28,43 +30,46 @@ export class HomePage {
     this.menu.open('end');
   }
 
-  openCustom() {
-    this.menu.enable(true, 'custom');
-    this.menu.open('custom');
+  loadStream(type) {
+    console.log('stream loaded with type: ' + type);
+  }
+
+  async presentModal(type) {
+    const modal = await this.modalController.create({
+      component: AddPostPage,
+      componentProps: {
+        type: type
+      }
+    });
+    return await modal.present();
   }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
       header: 'What would you like to post?',
       buttons: [{
-        text: 'Stream',
-        icon: 'list',
-        handler: () => {
-          console.log('Stream clicked');
-        }
-      }, {
         text: 'Story',
         icon: 'book',
         handler: () => {
-          console.log('Story clicked');
+          this.presentModal('story');
         }
       }, {
         text: 'Quote',
         icon: 'quote',
         handler: () => {
-          console.log('Quote clicked');
+          this.presentModal('quote');
+        }
+      },{
+        text: 'Goal',
+        icon: 'ribbon',
+        handler: () => {
+          this.presentModal('goal');
         }
       }, {
-        text: 'Video',
-        icon: 'play-circle',
+        text: 'Achievement',
+        icon: 'trophy',
         handler: () => {
-          console.log('Video clicked');
-        }
-      }, {
-        text: 'Support',
-        icon: 'flame',
-        handler: () => {
-          console.log("Support clicked");
+          this.presentModal('achievement');
         }
       }]
     });
