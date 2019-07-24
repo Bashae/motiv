@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class AddPostPage implements OnInit {
   @Input() type: string;
+  bgColor: string = "#5f9ea0";
 
   constructor(
     public modalController: ModalController
@@ -15,6 +16,11 @@ export class AddPostPage implements OnInit {
 
   ngOnInit() {
     console.log('the type is: ' + this.type);
+  }
+
+  changeColor(event) {
+    if(event && event.target) 
+      this.bgColor = event.target.value;
   }
 
   dismissModal() {
