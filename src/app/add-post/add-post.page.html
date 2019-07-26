@@ -24,13 +24,10 @@
       <ion-list-header>
         Choose a background:
       </ion-list-header>
-      <ion-button fill="clear" class="button button--upload-type"><ion-icon class="icon--color-picker" name="color-palette"></ion-icon></ion-button>
-      <ion-button fill="clear" class="button button--upload-type"><ion-icon class="icon--image" name="image"></ion-icon></ion-button>
+      <input type="color" width="100%" value="#5f9ea0" (change)="changeColor($event, value)" />
+      <ion-button fill="clear" class="button button--upload-type" (click)="pickImage()"><ion-icon class="icon--image" name="image"></ion-icon></ion-button>
     </ion-item>
     <ion-list>
-      <ion-item>
-        <input type="color" width="100%" style="width: 100%;height: 35px;" value="#5f9ea0" (change)="changeColor($event, value)" />
-      </ion-item>
       <ion-list-header>
         Recently Used Colors:
       </ion-list-header>

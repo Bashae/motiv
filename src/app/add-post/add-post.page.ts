@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 @Component({
   selector: 'app-add-post',
@@ -11,7 +12,8 @@ export class AddPostPage implements OnInit {
   bgColor: string = "#5f9ea0";
 
   constructor(
-    public modalController: ModalController
+    public modalController: ModalController,
+    private imagePicker: ImagePicker
   ) { }
 
   ngOnInit() {
@@ -21,6 +23,15 @@ export class AddPostPage implements OnInit {
   changeColor(event) {
     if(event && event.target) 
       this.bgColor = event.target.value;
+  }
+
+  pickImage() {
+    let options;
+    this.imagePicker.getPictures(options).then((results) => {
+      for (var i = 0; i < results.length; i++) {
+          console.log('Image URI: ' + results[i]);
+      }
+    }, (err) => { });
   }
 
   dismissModal() {

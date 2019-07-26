@@ -9,6 +9,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddPostPage } from './add-post/add-post.page';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 // import { AuthService } from './auth.service';
 
 let firebaseConfig = {
@@ -31,6 +32,7 @@ let firebaseConfig = {
     AngularFireAuthModule,
     AppRoutingModule],
   providers: [
+    ImagePicker,
     StatusBar,
     SplashScreen,
     // AuthService,

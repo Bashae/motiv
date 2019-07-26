@@ -1,5 +1,7 @@
 {
   "name": "motiv",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
