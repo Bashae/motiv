@@ -10,6 +10,7 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 export class AddPostPage implements OnInit {
   @Input() type: string;
   bgColor: string = "#5f9ea0";
+  recentColors: string[] = [];
 
   constructor(
     public modalController: ModalController,
@@ -21,8 +22,10 @@ export class AddPostPage implements OnInit {
   }
 
   changeColor(event) {
-    if(event && event.target) 
-      this.bgColor = event.target.value;
+    if(event && event.target)
+      var color = event.target.value;
+      this.bgColor = color;
+      this.recentColors.push(color);
   }
 
   pickImage() {
