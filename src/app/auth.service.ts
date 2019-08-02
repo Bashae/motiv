@@ -18,17 +18,17 @@ export class AuthService {
   }
 
   setAuth() {
-    // this.afAuth.authState.subscribe(user => {
-    //   if(user) {
-    //     this.isLoggedIn = true;
-    //     this.user = user;
-    //     this.userId = this.user.uid;
-    //   } else {
-    //     this.isLoggedIn = false;
-    //     this.user = null;
-    //     this.userId = null;
-    //   }
-    // })
+    this.afAuth.authState.subscribe(user => {
+      if(user) {
+        this.isLoggedIn = true;
+        this.user = user;
+        this.userId = this.user.uid;
+      } else {
+        this.isLoggedIn = false;
+        this.user = null;
+        this.userId = null;
+      }
+    })
   }
 
   signInWithEmail() {

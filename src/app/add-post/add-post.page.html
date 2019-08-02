@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content *ngIf="type == 'quote'" class="quote--container">
-  <ion-textarea placeholder="Enter more information here..." [style.background]="bgColor" style="padding: 0;padding-top: 80px;color: white;margin:0;min-height: 200px;text-align: center;font-weight: bold;text-decoration: none;"></ion-textarea>
+  <ion-textarea placeholder="Enter more information here..." [style.background]="bgColor" [(ngModel)]="postText" style="padding: 0;padding-top: 80px;color: white;margin:0;min-height: 200px;text-align: center;font-weight: bold;text-decoration: none;"></ion-textarea>
   <ion-list style="margin-top: 0;padding-top: 0;">
     <ion-item>
       <ion-list-header>
@@ -28,9 +28,9 @@
       <ion-button fill="clear" class="button button--upload-type" (click)="pickImage()"><ion-icon class="icon--image" name="image"></ion-icon></ion-button>
     </ion-item>
     <!-- <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('q')">Submit</ion-button> -->
-    <ion-button>
-      <ion-icon fill="clear" name="send"></ion-icon>
-    </ion-button>      
+    <ion-button fill="clear"style="float: right;margin-right: 20px;" (click)="createPost('q')">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
   </ion-list>
 </ion-content>
 
@@ -39,14 +39,17 @@
     <ion-item>
       <ion-textarea placeholder="Enter more information here..."></ion-textarea>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="getImages()">
       <ion-icon name="images"></ion-icon> Upload from Phone
     </ion-item>
-    <ion-item>
+    <ion-item (click)="takePhoto()">
       <ion-icon name="camera"></ion-icon> Upload from Camera
     </ion-item>
   </ion-list>
-  <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('g')">Submit</ion-button>
+  <!-- <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('g')">Submit</ion-button> -->
+  <ion-button fill="clear"style="float: right;margin-right: 20px;" (click)="createPost('g')">
+    <ion-icon name="send"></ion-icon>
+  </ion-button> 
 </ion-content>
 
 <ion-content *ngIf="type == 'achievement'" class="achievement--container">
@@ -61,7 +64,10 @@
       <ion-icon name="camera"></ion-icon> Upload from Camera
     </ion-item>
   </ion-list>
-  <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('a')">Submit</ion-button>
+  <!-- <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('a')">Submit</ion-button> -->
+  <ion-button fill="clear"style="float: right;margin-right: 20px;" (click)="createPost('a')">
+    <ion-icon name="send"></ion-icon>
+  </ion-button>
 </ion-content>
 
 <ion-content *ngIf="type == 'story'" class="story--container">
@@ -76,5 +82,8 @@
       <ion-icon name="camera"></ion-icon> Upload from Camera
     </ion-item>
   </ion-list>
-  <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('s')">Submit</ion-button>
+  <!-- <ion-button shape="round" style="float:right;margin-right: 20px;" (click)="CreatePost('s')">Submit</ion-button> -->
+  <ion-button fill="clear"style="float: right;margin-right: 20px;" (click)="createPost('s')">
+    <ion-icon name="send"></ion-icon>
+  </ion-button>
 </ion-content>

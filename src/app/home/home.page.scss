@@ -7,3 +7,38 @@ h1 {
     background-color: cadetblue;
     color: white;
 }
+
+.card--display {
+    &.q {
+        color: white;
+    }
+}
+
+.q {
+    ion-item {
+        color: #666;
+    }
+    ion-icon {
+        color: #666 !important;
+    }
+    ion-item.active {
+        color: green;
+        
+        ion-icon {
+            color: green !important;
+        }
+    }
+    ion-card-title, ion-card-subtitle{
+        font-family: "Quicksand";
+        color: white;    
+    }
+    ion-card-title {
+        padding: 30px;
+        margin: 0 auto;
+        font-size: 26px;
+        text-align: center;
+    }
+    ion-card-subtitle {
+        font-size: 16px;
+    }
+}

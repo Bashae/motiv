@@ -10,7 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddPostPage } from './add-post/add-post.page';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
-// import { AuthService } from './auth.service';
+import { PostService } from './post.service';
+import { UserService } from './user.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth.service';
+import { Camera } from '@ionic-native/camera/ngx';
 
 let firebaseConfig = {
   apiKey: "AIzaSyCVPfWyPEvevbtoo_-fb5fTLR81FCmMF0s",
@@ -27,6 +32,7 @@ let firebaseConfig = {
   entryComponents: [AddPostPage],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
@@ -35,7 +41,12 @@ let firebaseConfig = {
     ImagePicker,
     StatusBar,
     SplashScreen,
-    // AuthService,
+    AuthService,
+    PostService,
+    UserService,
+    AngularFirestore,
+    Camera,
+    ImagePicker,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

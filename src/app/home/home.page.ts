@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActionSheetController, MenuController, ModalController } from '@ionic/angular';
 import { AuthService } from './../auth.service';
 import { AddPostPage } from '../add-post/add-post.page';
+import { StreamService } from '../stream.service';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +10,41 @@ import { AddPostPage } from '../add-post/add-post.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  posts: any[];
 
   constructor(
     public menu: MenuController,
     public modalController: ModalController,
     public actionSheetController: ActionSheetController,
-    public authService: AuthService
-  ) { }
+    public authService: AuthService,
+    public streamService: StreamService
+  ) { 
+    this.streamService.getPosts('all').subscribe(posts => {
+      this.posts = posts;
+      console.log('what is posts');
+      console.log(posts)
+    });
+  }
 
   logOutUser() {
     this.authService.logOut();
+  }
+
+  togglePost($ev) {
+    let target = $ev.target.closest('.item');
+    if(target.classList.contains('active')) {
+      this.unlikePost(target);
+    } else {
+      this.likePost(target);
+    }
+  }
+
+  likePost($tar) {
+    $tar.classList.add('active');
+  }
+
+  unlikePost($tar) {
+    $tar.classList.remove('active');
   }
 
   openFirst() {
